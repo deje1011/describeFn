@@ -1,0 +1,28 @@
+{
+  "name": "describefn",
+  "version": "1.0.0",
+  "description": "A super simple testing utility, mostly useful for pure functions.",
+  "main": "dist/describeFnBrowser.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "lodash": "^4.16.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "build": "browserify src/describeFn.js -o dist/describeFnBrowser.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deje1011/describeFn.git"
+  },
+  "author": "Jesse Desaever",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deje1011/describeFn/issues"
+  },
+  "homepage": "https://github.com/deje1011/describeFn#readme"
+}
