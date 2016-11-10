@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "test",
+    "test": "node tests/tests",
     "build": "browserify src/describeFn.js -o dist/describeFnBrowser.js"
   },
   "repository": {
