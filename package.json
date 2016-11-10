@@ -2,7 +2,7 @@
   "name": "describefn",
   "version": "1.0.0",
   "description": "A super simple testing utility, mostly useful for pure functions.",
-  "main": "dist/describeFnBrowser.js",
+  "main": "dist/describeFn.js",
   "directories": {
     "example": "examples"
   },
@@ -13,7 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "node tests/tests",
-    "build": "browserify src/describeFn.js -o dist/describeFnBrowser.js"
+    "build": "browserify src/describeFn.js -o dist/describeFnBrowser.js && cp -R src/describeFn.js dist/describeFn.js"
   },
   "repository": {
     "type": "git",
