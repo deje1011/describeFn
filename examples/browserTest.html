@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Test</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+
+        <script src="../dist/describeFnBrowser.js"></script>
+
+        <div id="logs"></div>
+
+        <script>
+            // An example function to test:
+            var concat = function (params) {
+                if (params.stringA === undefined || params.stringB === undefined) {
+                    throw new Error('Invalid params');
+                }
+                if (params.concatChar === undefined) {
+                    params.concatChar = '';
+                }
+                return params.stringA + params.concatChar + params.stringB;
+            };
+
+            describeFn({
+                fn: concat,
+                fnName: 'concat',
+                tests: {
+                    'returns one string containing both passed strings': {
+                        params: {
+                            stringA: 'A',
+                            stringB: 'B'
+                        },
+                        result: {equals: 'AB'}
+                    },
+                    'inserts the concatChar in the middle of both strings': {
+                        params: {
+                            stringA: 'A',
+                            stringB: 'B',
+                            concatChar: '-'
+                        },
+                        result: {equals: 'A-B'}
+                    },
+                    'throws an error if we dont pass enough strings': {
+                        params: {stringA: 'A'},
+                        result: {isError: true}
+                    }
+                }
+            }).then(function (testResults) {
+                console.log(JSON.stringify(testResults.logs, null, 2));
+                document.getElementById('logs').innerHTML = testResults.logs.join('<br />');
+            });
+        </script>
+    </body>
+</html>
