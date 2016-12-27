@@ -1,6 +1,6 @@
 {
   "name": "describefn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A super simple testing utility, mostly useful for pure functions.",
   "main": "dist/describeFn.js",
   "directories": {
